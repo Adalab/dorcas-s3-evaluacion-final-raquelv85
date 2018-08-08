@@ -32,7 +32,7 @@ class App extends Component {
         const value = event.target.value;
         //console.log(value);
         let search = [];
-        let clear = [];
+
         search = this
             .state
             .data
@@ -44,32 +44,34 @@ class App extends Component {
                 }
             })
 
-        console.log("hola", clear)
         this.setState({dataTemp: search, value: true})
 
     }
-    
+
     render() {
         let arrayDatos;
 
-        if(this.state.value === false){
+        if (this.state.value === false) {
             arrayDatos = this.state.data;
-        }else{
+        } else {
             arrayDatos = this.state.dataTemp;
         }
-        
-        return(<div className="App">
-        <Filters onChangeInput={this.handleInputChange}></Filters>
-        <Switch>
-            <Route
-                exact
-                path='/'
-                render={props => <CharacterList arrayDatos={arrayDatos}></CharacterList>}></Route>
-            <Route path='./CharacterCard/:id' render={props => <CharacterCard match={props.match} arrayDatos={arrayDatos}></CharacterCard>}></Route>
-        </Switch>
-        
-    </div>);
 
+        return (
+            <div className="App">
+                <Filters onChangeInput={this.handleInputChange}></Filters>
+                <Switch>
+                    <Route
+                        exact
+                        path='/'
+                        render={props => <CharacterList arrayDatos={arrayDatos}></CharacterList>}></Route>
+                    <Route
+                        path='/CharacterCard/:id'
+                        render={props => <CharacterCard match={props.match} arrayDatos={arrayDatos}></CharacterCard>}></Route>
+                </Switch>
+
+            </div>
+        );
 
     }
 }
