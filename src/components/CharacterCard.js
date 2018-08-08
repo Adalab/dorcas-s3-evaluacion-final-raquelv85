@@ -3,18 +3,6 @@ import {Link, Route, Switch} from 'react-router-dom';
 
 class CharacterCard extends Component{
 
-    deadOrAlive(data){
-        console.log(data)
-        if(data === true){
-           
-            return "vive hasta el final de la saga"
-        }else{
-            return "muere antes de terminar la saga"
-        }
-        
-        
-    }
-
     render(){
       console.log(this.props.arrayDatos)
       console.log(this.props.match.params.id)
