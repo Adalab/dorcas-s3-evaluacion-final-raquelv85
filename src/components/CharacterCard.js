@@ -30,7 +30,7 @@ class CharacterCard extends Component{
                                     <p className="name">casa: {arrayDatos[this.props.match.params.id].house}</p>
                                     <p className="name">Nacimiento: {arrayDatos[this.props.match.params.id].dateOfBirth}</p>
                                     <p className="name">Patronus: {arrayDatos[this.props.match.params.id].patronus}</p>
-                                    <p className="name">Patronus: {this.deadOrAlive(arrayDatos[this.props.match.params.id].alive)}</p>
+                                    <p className="name">Patronus: {arrayDatos[this.props.match.params.id].alive ? "Vive hasta el final de la saga" : "Muere antes de terminar la saga"}</p>
                                    
                                 
                                 </li>
