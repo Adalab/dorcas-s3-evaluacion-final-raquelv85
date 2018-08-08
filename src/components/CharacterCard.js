@@ -3,13 +3,39 @@ import {Link, Route, Switch} from 'react-router-dom';
 
 class CharacterCard extends Component{
 
+    deadOrAlive(data){
+        console.log(data)
+        if(data === true){
+           
+            return "vive hasta el final de la saga"
+        }else{
+            return "muere antes de terminar la saga"
+        }
+        
+        
+    }
+
     render(){
       console.log(this.props.arrayDatos)
-      console.log(this.props.match)
+      console.log(this.props.match.params.id)
+      const {arrayDatos} = this.props
+      const estado = null;
         return(
-            <div>Holaaaaaaaaaaaaaaa
+            <div>
 
-                <div>aaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                 <ul className="lista">
+                   
+                               <li >
+                                    <p className="name">Nombre: {arrayDatos[this.props.match.params.id].name}</p>
+                                    <p className="name">casa: {arrayDatos[this.props.match.params.id].house}</p>
+                                    <p className="name">Nacimiento: {arrayDatos[this.props.match.params.id].dateOfBirth}</p>
+                                    <p className="name">Patronus: {arrayDatos[this.props.match.params.id].patronus}</p>
+                                    <p className="name">Patronus: {this.deadOrAlive(arrayDatos[this.props.match.params.id].alive)}</p>
+                                   
+                                
+                                </li>
+
+                </ul>
             </div>
         );
     }
