@@ -4,6 +4,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterCard from './CharacterCard';
 import {Link, Route, Switch} from 'react-router-dom';
+import PropTypes from 'prop-types'; 
 
 const URL = 'https://hp-api.herokuapp.com/api/characters';
 class App extends Component {
