@@ -9,66 +9,71 @@ import img4 from './../img/rav.jpeg';
 class CharacterCard extends Component {
 
     render() {
-        console.log(this.props.arrayDatos)
-        console.log(this.props.match.params.id)
-        const {arrayDatos} = this.props
-        const estado = null;
-        const house = "";
-        console.log(img1)
-        if(arrayDatos[this.props.match.params.id].house == 'Gryffindor'){
-             this.house = img1;
-        }else if(arrayDatos[this.props.match.params.id].house == 'Slytherin'){
-            this.house = img2;
-        }else if(arrayDatos[this.props.match.params.id].house == 'Hufflepuff'){
-            this.house = img3;
-        }else if(arrayDatos[this.props.match.params.id].house == 'Ravenclaw'){
-            this.house = img4;
-        }
-        return (
-            <div>
-                <h2 className="title">Información</h2>
-                <div className="container-card">
-                    <div className="container-listado">
-                        <img
-                            className="img-card"
-                            src={arrayDatos[this.props.match.params.id].image}
-                            alt=""/>
-                        <ul className="lista">
-
-                            <li >
-                                <p className="item">
-                                    <span className="span-item">Nombre:</span>
-                                    {arrayDatos[this.props.match.params.id].name}</p>
-                                <p className="item">
-                                    <span className="span-item">Casa:</span>
-                                    {arrayDatos[this.props.match.params.id].house || "dato desconocido"}</p>
-                                    <img className="img-link" src={this.house} alt=""/>
-                                <p className="item">
-                                    <span className="span-item">Nacimiento:</span>
-                                    {arrayDatos[this.props.match.params.id].dateOfBirth || "dato desconocido"}</p>
-                                <p className="item">
-                                    <span className="span-item">Patronus:</span>
-                                    {arrayDatos[this.props.match.params.id].patronus || "dato desconocido"}</p>
-                                <p className="item">
-                                    <span className="span-item">Estado:</span>
-                                    {arrayDatos[this.props.match.params.id].alive
-                                        ? "Vive hasta el final de la saga"
-                                        : "Muere antes de terminar la saga"}</p>
-                                    
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="container-link">
-                        <Link className="link-back" onClick={this.props.onClickBack} to="/">Volver</Link>
+        // console.log(this.props.arrayDatos)
+        // console.log(this.props.match.params.id)
+        
+        if(this.props.arrayDatos.length === 0){
+          return  <p>Cargando datos</p>
+        }else{
+            const {arrayDatos} = this.props;
+            const house = "";
+            if(arrayDatos[this.props.match.params.id].house == 'Gryffindor'){
+                 this.house = img1;
+            }else if(arrayDatos[this.props.match.params.id].house == 'Slytherin'){
+                this.house = img2;
+            }else if(arrayDatos[this.props.match.params.id].house == 'Hufflepuff'){
+                this.house = img3;
+            }else if(arrayDatos[this.props.match.params.id].house == 'Ravenclaw'){
+                this.house = img4;
+            }
+            return (
+                <div>
+                    <h2 className="title">Información</h2>
+                    <div className="container-card">
+                        <div className="container-listado">
+                            <img
+                                className="img-card"
+                                src={arrayDatos[this.props.match.params.id].image}
+                                alt=""/>
+                            <ul className="lista">
+    
+                                <li >
+                                    <p className="item">
+                                        <span className="span-item">Nombre:</span>
+                                        {arrayDatos[this.props.match.params.id].name}</p>
+                                    <p className="item">
+                                        <span className="span-item">Casa:</span>
+                                        {arrayDatos[this.props.match.params.id].house || "dato desconocido"}</p>
+                                        <img className="img-link" src={this.house} alt=""/>
+                                    <p className="item">
+                                        <span className="span-item">Nacimiento:</span>
+                                        {arrayDatos[this.props.match.params.id].dateOfBirth || "dato desconocido"}</p>
+                                    <p className="item">
+                                        <span className="span-item">Patronus:</span>
+                                        {arrayDatos[this.props.match.params.id].patronus || "dato desconocido"}</p>
+                                    <p className="item">
+                                        <span className="span-item">Estado:</span>
+                                        {arrayDatos[this.props.match.params.id].alive
+                                            ? "Vive hasta el final de la saga"
+                                            : "Muere antes de terminar la saga"}</p>
+                                        
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="container-link">
+                            <Link className="link-back" onClick={this.props.onClickBack} to="/">Volver</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+
+        }
+
     }
 }
 
 CharacterCard.PropTypes = {
-    arrayDatos: PropTypes.array
+    arrayDatos: PropTypes.array.isRequired
 }
 
 export default CharacterCard;

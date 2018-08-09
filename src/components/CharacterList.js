@@ -39,8 +39,8 @@ class CharacterList extends Component {
 }
 
 CharacterList.PropTypes = {
-    arrayDatos: PropTypes.array,
-    onClickCard: PropTypes.func
+    arrayDatos: PropTypes.array.isRequired,
+    onClickCard: PropTypes.func.isRequired
 }
 
 export default CharacterList;
