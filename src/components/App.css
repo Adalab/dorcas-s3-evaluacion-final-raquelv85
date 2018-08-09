@@ -38,9 +38,9 @@
 
 @media all and (max-width: 638px) {
   .header {
-    height: 390px;
+    height: 229px;
   }
   .main{
-    margin-top: 429px;
+    margin-top: 270px;
   }
 }
