@@ -5,7 +5,7 @@ import CharacterList from './CharacterList';
 import CharacterCard from './CharacterCard';
 import {Link, Route, Switch} from 'react-router-dom';
 
-const URL = 'http://hp-api.herokuapp.com/api/characters';
+const URL = 'https://hp-api.herokuapp.com/api/characters';
 class App extends Component {
     constructor(props) {
         super(props)
