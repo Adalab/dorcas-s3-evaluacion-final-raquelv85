@@ -1,13 +1,17 @@
-.lista{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
+
+.title{
+    margin: 15px;
+    font-size: 73px;
+    color: #6E0908;
 }
 
-.lista li{
-    padding: 20px 20px;
+.subtitle{
+    margin: 0;
+    font-size: 36px;
 }
-.img{
-    width: 70%;
+
+.input{
+    margin-top: 18px;
+    width: 250px;
 }
+

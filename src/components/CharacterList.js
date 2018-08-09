@@ -1,24 +1,25 @@
 import React, {Component} from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
+import './CharacterList.css';
 
 class CharacterList extends Component {
 
     render() {
-        const {arrayDatos, onChangeInput} = this.props;
+        const {arrayDatos, onClickCard} = this.props;
 
         return (
             <div>
-             
+               
                 <ul className="lista">
                     {arrayDatos
                         .map(function (item, index) {
                             if (item !== undefined) {
                                 item.idList = index;
                                 return <li key={index}>
-                                    <p className="name">Nombre: {item.name}</p>
+                                    <p className="item"><span className="span-item">Nombre:</span> {item.name}</p>
                                     <img className="img" src={item.image} alt=""/>
-                                    <p>Casa: {item.house}</p>
-                                    <Link to={`CharacterCard/${item.idList}`} >
+                                    <p className="item"><span className="span-item">Casa:</span> {item.house}</p>
+                                    <Link onClick={onClickCard} className="link" to={`CharacterCard/${item.idList}`} >
                                         Info
                                     </Link>
                                 </li>

@@ -1,0 +1,41 @@
+
+.container-card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-listado{
+    display: flex;
+    justify-content: center;
+}
+.container-link{
+    margin-top: 39px;
+}
+.img-card{
+
+    width: 298px;
+    height: 396px;
+}
+
+.link-back{
+    font-size: 54px;
+    text-decoration: none;
+    color: #6E0908;
+    margin-top: 29px;
+    padding: 10px;
+    background-color: #F3BD59;
+}
+
+
+@media all and (max-width: 638px) {
+    .container-listado{
+        flex-direction: column;
+    }
+    .container-card {
+        flex-direction: column;
+    }
+    .img-card {
+        margin: auto;
+    }
+}

@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'HARRYP__';
+  src: url('fonts/HARRYP__.TTF') format('truetype');
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  width: 100%;
+  font-family: 'HARRYP__';
 }
+

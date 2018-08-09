@@ -1,0 +1,38 @@
+.item{
+ 
+    font-size: 28px;
+    margin-bottom: 9px;
+}
+
+.span-item{
+    font-family: sans-serif;
+    font-size: 21px;
+}
+
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lista li {
+    padding: 20px 20px;
+    border: 3px solid #6E0908;
+    width: 264px;
+    margin: 2px;
+}
+
+.img{
+    width: 167px;
+    height: 237px;
+}
+
+.link{
+   font-size: 37px;
+   text-decoration: none;
+   color: #6E0908;
+}
+

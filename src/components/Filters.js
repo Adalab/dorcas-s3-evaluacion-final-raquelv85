@@ -7,20 +7,15 @@ class Filters extends Component {
         const {onChangeInput, arrayDatos, arrayDatosTemp, value} = this.props;
         console.log(arrayDatosTemp)
         console.log(value)
+        
 
         return(
-            <div>
-            <label htmlFor="">Harry Potter Characters</label>
-            <input type="text" onChange={onChangeInput}/>
+            <div className="container-input">
+            <h1 className="title">Harry Potter Characters</h1>
+            <h2 className="subtitle">Introduce el nombre de un personaje</h2>
+            <input className="input" type="text" onChange={onChangeInput}/>
             </div>
         );
-        // if (value === false) {
-
-        //     return <CharacterList arrayDatos={arrayDatos} onChangeInput={onChangeInput}></CharacterList>
-            
-        // } else {
-        //     return <CharacterList arrayDatos={arrayDatosTemp} onChangeInput={onChangeInput}></CharacterList>
-        // }
 
     }
 }
