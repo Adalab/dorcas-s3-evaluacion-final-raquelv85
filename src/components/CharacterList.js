@@ -6,12 +6,14 @@ import PropTypes from 'prop-types';
 class CharacterList extends Component {
 
     render() {
-        const {arrayDatos, onClickCard} = this.props;
-        return (
-            <div>
-                <ul className="lista">
-                    {arrayDatos
-                        .map((item, index) => {
+        if (this.props.arrayDatos.length === 0) {
+            return <p className="load">Cargando datos</p>
+        } else {
+            const {arrayDatos, onClickCard} = this.props;
+            return (
+                <div>
+                    <ul className="lista">
+                        {arrayDatos.map((item, index) => {
                             if (item !== undefined) {
                                 item.idList = index;
                                 return <li key={index}>
@@ -31,14 +33,17 @@ class CharacterList extends Component {
                                 </li>
                             }
                         })
-                    }
-                </ul>
-            </div>
-        );
+}
+                    </ul>
+                </div>
+            );
+
+        }
+
     }
 }
 
-CharacterList.PropTypes = {
+CharacterList.propTypes = {
     arrayDatos: PropTypes.array.isRequired,
     onClickCard: PropTypes.func.isRequired
 }

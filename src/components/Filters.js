@@ -7,7 +7,6 @@ class Filters extends Component {
     render() {
         const {onChangeInput, arrayDatos, arrayDatosTemp, value} = this.props;
         console.log(arrayDatosTemp)
-        
 
         return (
             <div className="container-input">
@@ -23,10 +22,9 @@ class Filters extends Component {
 
     }
 }
-Filters.PropTypes = {
+Filters.propTypes = {
     onChangeInput: PropTypes.func.isRequired,
-    arrayDatosTemp: PropTypes.array.isRequired,
-   
+    arrayDatosTemp: PropTypes.array.isRequired
 }
 
 export default Filters;

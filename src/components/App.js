@@ -4,7 +4,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterCard from './CharacterCard';
 import {Link, Route, Switch} from 'react-router-dom';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 
 const URL = 'https://hp-api.herokuapp.com/api/characters';
 class App extends Component {
@@ -21,8 +21,12 @@ class App extends Component {
         this.handleInputChange = this
             .handleInputChange
             .bind(this);
-        this.handleClickCard = this.handleClickCard.bind(this);
-        this.handleClickBack = this.handleClickBack.bind(this);
+        this.handleClickCard = this
+            .handleClickCard
+            .bind(this);
+        this.handleClickBack = this
+            .handleClickBack
+            .bind(this);
 
     }
 
@@ -53,18 +57,12 @@ class App extends Component {
 
     }
 
-    handleClickCard(){
-        this.setState({
-            classHeader: 'invisible',
-            classMargin: "top"
-        })
+    handleClickCard() {
+        this.setState({classHeader: 'invisible', classMargin: "top"})
     }
-      handleClickBack() {
-          this.setState({
-              classHeader: 'visible',
-              classMargin: "middle"
-          })
-      }
+    handleClickBack() {
+        this.setState({classHeader: 'visible', classMargin: "middle"})
+    }
 
     render() {
         let arrayDatos;
@@ -85,10 +83,13 @@ class App extends Component {
                         <Route
                             exact
                             path='/'
-                            render={props => <CharacterList arrayDatos={arrayDatos} onClickCard={this.handleClickCard} ></CharacterList>}></Route>
+                            render={props => <CharacterList arrayDatos={arrayDatos} onClickCard={this.handleClickCard}></CharacterList>}></Route>
                         <Route
                             path='/CharacterCard/:id'
-                            render={props => <CharacterCard match={props.match} arrayDatos={arrayDatos} onClickBack={this.handleClickBack}></CharacterCard>}></Route>
+                            render={props => <CharacterCard
+                            match={props.match}
+                            arrayDatos={arrayDatos}
+                            onClickBack={this.handleClickBack}></CharacterCard>}></Route>
                     </Switch>
                 </main>
             </div>

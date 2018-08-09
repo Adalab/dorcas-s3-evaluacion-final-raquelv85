@@ -9,21 +9,19 @@ import img4 from './../img/rav.jpeg';
 class CharacterCard extends Component {
 
     render() {
-        // console.log(this.props.arrayDatos)
-        // console.log(this.props.match.params.id)
-        
-        if(this.props.arrayDatos.length === 0){
-          return  <p>Cargando datos</p>
-        }else{
+
+        if (this.props.arrayDatos.length === 0) {
+            return <p>Cargando datos</p>
+        } else {
             const {arrayDatos} = this.props;
             const house = "";
-            if(arrayDatos[this.props.match.params.id].house == 'Gryffindor'){
-                 this.house = img1;
-            }else if(arrayDatos[this.props.match.params.id].house == 'Slytherin'){
+            if (arrayDatos[this.props.match.params.id].house == 'Gryffindor') {
+                this.house = img1;
+            } else if (arrayDatos[this.props.match.params.id].house == 'Slytherin') {
                 this.house = img2;
-            }else if(arrayDatos[this.props.match.params.id].house == 'Hufflepuff'){
+            } else if (arrayDatos[this.props.match.params.id].house == 'Hufflepuff') {
                 this.house = img3;
-            }else if(arrayDatos[this.props.match.params.id].house == 'Ravenclaw'){
+            } else if (arrayDatos[this.props.match.params.id].house == 'Ravenclaw') {
                 this.house = img4;
             }
             return (
@@ -36,7 +34,7 @@ class CharacterCard extends Component {
                                 src={arrayDatos[this.props.match.params.id].image}
                                 alt=""/>
                             <ul className="lista">
-    
+
                                 <li >
                                     <p className="item">
                                         <span className="span-item">Nombre:</span>
@@ -44,7 +42,7 @@ class CharacterCard extends Component {
                                     <p className="item">
                                         <span className="span-item">Casa:</span>
                                         {arrayDatos[this.props.match.params.id].house || "dato desconocido"}</p>
-                                        <img className="img-link" src={this.house} alt=""/>
+                                    <img className="img-link" src={this.house} alt=""/>
                                     <p className="item">
                                         <span className="span-item">Nacimiento:</span>
                                         {arrayDatos[this.props.match.params.id].dateOfBirth || "dato desconocido"}</p>
@@ -56,7 +54,7 @@ class CharacterCard extends Component {
                                         {arrayDatos[this.props.match.params.id].alive
                                             ? "Vive hasta el final de la saga"
                                             : "Muere antes de terminar la saga"}</p>
-                                        
+
                                 </li>
                             </ul>
                         </div>
@@ -72,7 +70,7 @@ class CharacterCard extends Component {
     }
 }
 
-CharacterCard.PropTypes = {
+CharacterCard.propTypes = {
     arrayDatos: PropTypes.array.isRequired
 }
 
