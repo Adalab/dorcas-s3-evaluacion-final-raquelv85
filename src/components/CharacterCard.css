@@ -27,7 +27,9 @@
     background-color: #F3BD59;
 }
 
-
+.img-link{
+    width: 20%;
+}
 @media all and (max-width: 638px) {
     .container-listado{
         flex-direction: column;

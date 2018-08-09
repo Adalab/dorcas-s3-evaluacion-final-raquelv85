@@ -7,7 +7,6 @@ class CharacterList extends Component {
 
     render() {
         const {arrayDatos, onClickCard} = this.props;
-
         return (
             <div>
                 <ul className="lista">

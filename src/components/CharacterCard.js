@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import './CharacterCard.css';
 import {Link, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import img1 from './../img/Gryf.gif';
+import img2 from './../img/sly.jpeg';
+import img3 from './../img/huf.png';
+import img4 from './../img/rav.jpeg';
 class CharacterCard extends Component {
 
     render() {
@@ -10,6 +13,17 @@ class CharacterCard extends Component {
         console.log(this.props.match.params.id)
         const {arrayDatos} = this.props
         const estado = null;
+        const house = "";
+        console.log(img1)
+        if(arrayDatos[this.props.match.params.id].house == 'Gryffindor'){
+             this.house = img1;
+        }else if(arrayDatos[this.props.match.params.id].house == 'Slytherin'){
+            this.house = img2;
+        }else if(arrayDatos[this.props.match.params.id].house == 'Hufflepuff'){
+            this.house = img3;
+        }else if(arrayDatos[this.props.match.params.id].house == 'Ravenclaw'){
+            this.house = img4;
+        }
         return (
             <div>
                 <h2 className="title">Información</h2>
@@ -27,18 +41,20 @@ class CharacterCard extends Component {
                                     {arrayDatos[this.props.match.params.id].name}</p>
                                 <p className="item">
                                     <span className="span-item">Casa:</span>
-                                    {arrayDatos[this.props.match.params.id].house}</p>
+                                    {arrayDatos[this.props.match.params.id].house || "dato desconocido"}</p>
+                                    <img className="img-link" src={this.house} alt=""/>
                                 <p className="item">
                                     <span className="span-item">Nacimiento:</span>
-                                    {arrayDatos[this.props.match.params.id].dateOfBirth}</p>
+                                    {arrayDatos[this.props.match.params.id].dateOfBirth || "dato desconocido"}</p>
                                 <p className="item">
                                     <span className="span-item">Patronus:</span>
-                                    {arrayDatos[this.props.match.params.id].patronus}</p>
+                                    {arrayDatos[this.props.match.params.id].patronus || "dato desconocido"}</p>
                                 <p className="item">
                                     <span className="span-item">Estado:</span>
                                     {arrayDatos[this.props.match.params.id].alive
                                         ? "Vive hasta el final de la saga"
                                         : "Muere antes de terminar la saga"}</p>
+                                    
                             </li>
                         </ul>
                     </div>
