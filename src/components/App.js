@@ -41,7 +41,7 @@ class App extends Component {
         search = this
             .state
             .data
-            .map(function (item) {
+            .map((item) => {
                 //console.log(item.name.toLowerCase())
                 if (item.name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                     // console.log("nombre ",item)

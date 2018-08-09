@@ -12,7 +12,7 @@ class CharacterList extends Component {
             <div>
                 <ul className="lista">
                     {arrayDatos
-                        .map(function (item, index) {
+                        .map((item, index) => {
                             if (item !== undefined) {
                                 item.idList = index;
                                 return <li key={index}>
