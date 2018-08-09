@@ -44,4 +44,11 @@
     margin-top: 270px;
   }
 }
+@media all and (max-width: 425px) {
+  .header {
+    height: 255px;
+  }
+
+}
+
 
