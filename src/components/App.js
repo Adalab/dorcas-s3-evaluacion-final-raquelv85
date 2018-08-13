@@ -27,6 +27,9 @@ class App extends Component {
         this.handleClickBack = this
             .handleClickBack
             .bind(this);
+            this.handleChange = this
+            .handleChange
+            .bind(this);
 
     }
 
@@ -40,16 +43,37 @@ class App extends Component {
 
         const value = event.target.value;
         //console.log(value);
-        let search = [];
+        
 
-        search = this
-            .state
-            .data
+       const search = this.state.data
             .map((item) => {
                 //console.log(item.name.toLowerCase())
                 if (item.name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                     // console.log("nombre ",item)
                     return item
+                }
+            })
+
+        this.setState({dataTemp: search, value: true})
+
+    }
+    handleChange(event){
+        const value = event.target.value;
+        //console.log(value);
+        console.log(value)
+
+
+
+       const search = this.state.data
+            .map((item) => {
+                //console.log(item.name.toLowerCase())
+                if (value === "vivos" && item.alive === true) {
+                    // console.log("nombre ",item)
+                    return item
+                }else if(value === "muertos" && item.alive === false){
+                    return item
+                }else if(value === "todos"){
+                return item
                 }
             })
 
@@ -76,7 +100,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className={`header ${this.state.classHeader}`}>
-                    <Filters onChangeInput={this.handleInputChange}></Filters>
+                    <Filters onChangeInput={this.handleInputChange} onChange={this.handleChange}></Filters>
                 </header>
                 <main className={`main ${this.state.classMargin}`}>
                     <Switch>

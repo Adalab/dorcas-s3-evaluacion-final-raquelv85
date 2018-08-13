@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Filters extends Component {
     render() {
-        const {onChangeInput, arrayDatos, arrayDatosTemp, value} = this.props;
+        const {onChangeInput, arrayDatos, arrayDatosTemp, value, onChange} = this.props;
         console.log(arrayDatosTemp)
 
         return (
@@ -17,6 +17,12 @@ class Filters extends Component {
                     type="text"
                     onChange={onChangeInput}
                     placeholder="Introduce el nombre"/>
+                    <select name="" id="" onChange={onChange}>
+                    <option value=""></option>
+                    <option value="vivos">vivos</option>
+                    <option value="muertos">muertos</option>
+                    <option value="todos">todos</option>
+                    </select>
             </div>
         );
 
